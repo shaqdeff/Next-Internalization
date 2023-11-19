@@ -2,7 +2,6 @@
 import { FC, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 
 // icons
