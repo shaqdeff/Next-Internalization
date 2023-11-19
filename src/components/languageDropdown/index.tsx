@@ -2,6 +2,7 @@
 import { FC, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 
 // icons
@@ -29,13 +30,8 @@ const LanguageDropdown: FC<Props> = () => {
     cn: CN,
   };
 
-  const storedLangIndex =
-    typeof window !== 'undefined'
-      ? localStorage.getItem('selectedLanguageIndex')
-      : null;
-  const initialLang = storedLangIndex
-    ? languages[parseInt(storedLangIndex, 10)]
-    : languages[0];
+  const storedLang = localStorage.getItem('selectedLanguage');
+  const initialLang = storedLang ? JSON.parse(storedLang) : languages[0];
 
   const [selectedLanguage, setSelectedLanguage] =
     useState<Language>(initialLang);
@@ -50,21 +46,20 @@ const LanguageDropdown: FC<Props> = () => {
   };
 
   const selectLanguage = (language: Language) => {
-    const index = languages.indexOf(language);
-    localStorage.setItem('selectedLanguageIndex', index.toString());
     setSelectedLanguage(language);
     setLanguageOpen(false);
   };
 
   useEffect(() => {
+    localStorage.setItem('selectedLanguage', JSON.stringify(selectedLanguage));
     if (selectedLanguage) {
       switchLanguage(selectedLanguage);
     }
   }, [selectedLanguage]);
 
   return (
-    <header className="p-4">
-      <nav className="relative">
+    <div className="p-4">
+      <div className="relative">
         <div className="flex items-center justify-center">
           <button
             onClick={toggleLanguage}
@@ -116,8 +111,8 @@ const LanguageDropdown: FC<Props> = () => {
             )}
           </AnimatePresence>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
   );
 };
 
