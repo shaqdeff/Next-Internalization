@@ -29,8 +29,13 @@ const LanguageDropdown: FC<Props> = () => {
     cn: CN,
   };
 
-  const storedLang = localStorage.getItem('selectedLanguage');
-  const initialLang = storedLang ? JSON.parse(storedLang) : languages[0];
+  const storedLangIndex =
+    typeof window !== 'undefined'
+      ? localStorage.getItem('selectedLanguageIndex')
+      : null;
+  const initialLang = storedLangIndex
+    ? languages[parseInt(storedLangIndex, 10)]
+    : languages[0];
 
   const [selectedLanguage, setSelectedLanguage] =
     useState<Language>(initialLang);
@@ -45,12 +50,13 @@ const LanguageDropdown: FC<Props> = () => {
   };
 
   const selectLanguage = (language: Language) => {
+    const index = languages.indexOf(language);
+    localStorage.setItem('selectedLanguageIndex', index.toString());
     setSelectedLanguage(language);
     setLanguageOpen(false);
   };
 
   useEffect(() => {
-    localStorage.setItem('selectedLanguage', JSON.stringify(selectedLanguage));
     if (selectedLanguage) {
       switchLanguage(selectedLanguage);
     }
