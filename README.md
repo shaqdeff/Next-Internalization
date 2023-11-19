@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Built With
 
-## Getting Started
+- Next.js
+- TypeScript
+- Framer Motion
+- TailwindCSS
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Click [here](https://next-internalization.netlify.app/) to view the live demo.
+
+## How To Use:
+
+To get started, follow these simple steps:
+
+### Prerequisites
+
+Make sure you have node `16.0.0` or higher and npm `9.0.0` or higher installed.
+
+### Setup
+
+- With git, clone the code to your machine, or download a ZIP of all the files directly.
+- [Download the ZIP file from this location](https://github.com/shaqdeff/Next-Internalization/archive/refs/heads/main.zip) or run the following [git](https://git-scm.com/) command to clone the files to your machine:
+
+```
+git clone https://github.com/shaqdeff/Next-Internalization.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Once the files are on your machine, open the **Next-Internalization** folder in [Visual Studio Code](https://code.visualstudio.com/download).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd Next-Internalization && code .
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Install
 
-## Learn More
+- After opening the files in Visual Studio Code, open the **VS Code** integrated terminal and run the following commands:
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This will install all the packages and dependencies used in the project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+- Run the following command to start a local server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This will open up the project on a browser on `http://localhost:3000/en`
+
+## Build
+
+- To create a production build:
+
+```
+npm run build
+```
+
+## Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Internalization (i18n) in Next.js](https://nextjs.org/docs/app/building-your-application/routing/internationalization)
+
+## Authors
+
+👤 **Shaquille Ndunda**
+
+- GitHub: [@shaqdeff](https://github.com/shaqdeff)
+- Twitter: [@shaquillendunda](https://twitter.com/shaquillendunda)
+- LinkedIn: [Shaquille Ndunda](https://www.linkedin.com/in/shaquille-ndunda)
+
+## Feedback and Contributions
+
+If you have any feedback, suggestions, or would like to contribute to this project, your involvement is highly valued. Feel free to open an [issue](../../issues/) or submit a pull request with your ideas and enhancements.
+
+Happy coding and showcasing!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
