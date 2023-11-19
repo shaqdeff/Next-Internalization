@@ -1,0 +1,11 @@
+{
+  "title_docs": "文档",
+  "title_learn": "学习",
+  "title_templates": "模板",
+  "title_deploy": "部署",
+  "get_started": "通过编辑开始",
+  "doc": "查找关于 Next.js 功能和 API 的深入信息。",
+  "learn": "通过互动课程学习 Next.js，包括测验！",
+  "template": "探索 Next.js 13 的示范环境。",
+  "deploy": "使用 Vercel 立即部署您的 Next.js 网站到可共享的 URL。"
+}

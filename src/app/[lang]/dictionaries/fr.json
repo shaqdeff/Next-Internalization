@@ -1,0 +1,11 @@
+{
+  "title_docs": "Docs",
+  "title_learn": "Apprendre",
+  "title_templates": "Modèles",
+  "title_deploy": "Déployer",
+  "get_started": "Commencez par éditer",
+  "doc": "Trouvez des informations détaillées sur les fonctionnalités et l&apos;API de Next.js.",
+  "learn": "Découvrez Next.js dans un cours interactif avec des quiz!",
+  "template": "Explorez le terrain de jeu Next.js 13.",
+  "deploy": "Déployez instantanément votre site Next.js sur une URL partageable avec Vercel."
+}

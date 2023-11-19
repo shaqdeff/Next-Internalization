@@ -1,0 +1,11 @@
+{
+  "title_docs": "Nyaraka",
+  "title_learn": "Jifunze",
+  "title_templates": "Violezo",
+  "title_deploy": "Sambaza",
+  "get_started": "Anza kwa kuhariri",
+  "doc": "Pata maelezo ya kina kuhusu vipengele vya Next.js na API.",
+  "learn": "Jifunze kuhusu Next.js katika kozi shirikishi yenye maswali!",
+  "template": "Gundua uwanja wa michezo wa Next.js 13.",
+  "deploy": "Sambaza tovuti yako ya Next.js papo hapo kwa URL inayoweza kushirikiwa na Vercel."
+}
