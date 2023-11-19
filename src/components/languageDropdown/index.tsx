@@ -1,14 +1,23 @@
 'use client';
-import { useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 
 // icons
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { EN, KE, FR, ES, DE, CN } from '../../../public/flags';
+import { Locale } from '@/app/[lang]/dictionaries';
 
-const LanguageDropdown = () => {
-  const languages = ['en', 'sw', 'fr', 'es', 'cn'];
+type Props = {};
+
+const LanguageDropdown: FC<Props> = () => {
+  const router = useRouter();
+
+  type Language = 'en' | 'sw' | 'fr' | 'es' | 'cn';
+  const languages: Language[] = ['en', 'sw', 'fr', 'es', 'cn'];
+
   type FlagsType = {
     [key: string]: any;
   };
@@ -21,17 +30,32 @@ const LanguageDropdown = () => {
     cn: CN,
   };
 
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+  const storedLang = localStorage.getItem('selectedLanguage');
+  const initialLang = storedLang ? JSON.parse(storedLang) : languages[0];
+
+  const [selectedLanguage, setSelectedLanguage] =
+    useState<Language>(initialLang);
   const [languageOpen, setLanguageOpen] = useState(false);
 
   const toggleLanguage = () => {
     setLanguageOpen(!languageOpen);
   };
 
-  const selectLanguage = (language: string) => {
+  const switchLanguage = (lang: Locale) => {
+    router.push(`/${lang}`);
+  };
+
+  const selectLanguage = (language: Language) => {
     setSelectedLanguage(language);
     setLanguageOpen(false);
   };
+
+  useEffect(() => {
+    localStorage.setItem('selectedLanguage', JSON.stringify(selectedLanguage));
+    if (selectedLanguage) {
+      switchLanguage(selectedLanguage);
+    }
+  }, [selectedLanguage]);
 
   return (
     <header className="p-4">
@@ -68,7 +92,9 @@ const LanguageDropdown = () => {
                         key={language}
                         className="px-4 py-2 w-3/4 mx-auto text-center lowercase rounded-md hover:bg-black cursor-pointer flex items-center justify-center"
                         aria-label={language}
-                        onClick={() => selectLanguage(language)}>
+                        onClick={() => {
+                          selectLanguage(language);
+                        }}>
                         <div className="relative w-4 h-4 rounded-full overflow-hidden mr-2">
                           <Image
                             src={flags[language]}
