@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.2",
     "framer-motion": "^10.16.5",
+    "negotiator": "^0.6.3",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
@@ -17,6 +19,7 @@
     "sass": "^1.69.5"
   },
   "devDependencies": {
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
